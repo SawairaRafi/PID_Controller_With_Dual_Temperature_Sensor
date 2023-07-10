@@ -13,6 +13,10 @@ on if the current temperature is over setpoint.
 5. By changes to the PID controller's 𝐾𝑝,𝐾𝑖, 𝑎𝑛𝑑 𝐾𝑑 values also affect the system's
 overshoots, settling time, and rising time.
 
+NOTE: The Code here is not Complete to get the Complete Code Go to my Pateron Page by clicking the sponsor button or by going to the url : https://www.patreon.com/SawairaRafi/
+
+
+
 PID stands for (Proportional Integral Derivative). It is used to measure the difference between
 the desired set point and the measured signal. In our project Temperature is the input signal, which
 is constantly measured, and its difference is calculated with desired set point, which can be either
