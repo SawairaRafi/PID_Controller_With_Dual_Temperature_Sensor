@@ -1,5 +1,7 @@
 # PID_Controller_With_Dual_Temperature_Sensor
 
+![WhatsApp Image 2023-07-10 at 6 09 25 PM](https://github.com/SawairaRafi/PID_Controller_With_Dual_Temperature_Sensor/assets/71180681/2f005e82-fdc0-4aaf-943f-4f7cfda61af3)
+
 Expected Outcomes
 1. The temperature control systems measure the box temperature in a sealed box.
 2. Compare it to the setpoint and use a temperature sensor in a feedback loop to identify
