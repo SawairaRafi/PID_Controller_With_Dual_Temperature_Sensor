@@ -1,4 +1,5 @@
-
+//The following Code is not Complete to get the Complete Code Go to my Pateron Page by clicking the sponsor button or by 
+//going to the url : https://www.patreon.com/SawairaRafi/
 #include<PID_v1.h>
 #include "DHT.h"
 #include <LiquidCrystal_I2C.h>
@@ -18,12 +19,8 @@ DHT dht(DHTPIN, DHTTYPE);
 
 double setPoint, Input, Output,Output1;
 double error;
+//kp , ki, kd values define below
 
-int kp = 50;
-int ki = 150;
-int kd = 50;
-char modes;
-double overshoot;
 LiquidCrystal_I2C lcd(0x3F, 16, 2);
 const byte ROWS = 4; 
 const byte COLS = 3; 
@@ -38,16 +35,9 @@ byte rowPins[ROWS] = {8, 7, 6, 5};
 byte colPins[COLS] = {4, 3, 2}; 
 
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
-Keypad keypads = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
-int i=0; 
-int intArray[3];
-int start=0;
-char k,z;
-int mode;
+//initializing PID
 
-PID myPID(&Input, &Output, &setPoint, kp, ki, kd, DIRECT);
-PID myPID1(&Input, &Output1, &setPoint, kp, ki, kd, REVERSE);
 
 void setup(){
 
@@ -85,21 +75,8 @@ void loop(){
   }
 
 
-if(start<3){
-  t=0;
-  start=start+1;
-} 
 
-  Input = t;
-       
-  error = setPoint - t;
-  
-//   Serial.print("Lower ");
-// Serial.print(0); // To freeze the lower limit
-// Serial.print("Higher");
-// Serial.print(100); // To freeze the upper limit
 
-// Serial.print(" ");
    Serial.print(setPoint);
    Serial.print(",");
    Serial.print(abs(error));  
@@ -240,21 +217,11 @@ else{
 else if(k!=35){ 
 
   myPID.Compute();
-  myPID1.Compute();
-  k = keypad.getKey();
-if(t>(setPoint-0.2)){
-  if(overshoot<t){
-overshoot=t;
-  }
-}
+ // main logic is missing
 
-if (t>setPoint){
-  
-  k = keypad.getKey();
-  lcd.setCursor(0, 0);
-  analogWrite(pwm,255);
-  analogWrite(pwmb,Output); //0  
-  lcd.setCursor(0,1);
+//To get Complete Code Go to my Pateron Page by sponsoring me 
+
+//
   lcd.print(t);
   lcd.print(" > ");
   lcd.print(setPoint);
@@ -270,18 +237,7 @@ Serial.println(Output);
    
   else if(t<setPoint){
  
-     k = keypad.getKey();
-      analogWrite(pwmb,255); 
-      analogWrite(pwm, Output1); //0
-        lcd.setCursor(0,1);  
-      lcd.print(t);
-      lcd.print(" < ");
-      lcd.print(setPoint);
-    
-      delay(1000);  
-      lcd.init();   
-     k = keypad.getKey();  
-         Serial.println("PID F : B");
+       Serial.println("PID F : B");
   Serial.print(Output1);
   Serial.print(" :");
 Serial.println(Output);
@@ -300,18 +256,9 @@ else{
 
 
 int computeMode(){
-int i=0;
-int array[2];
-int value;
+ 
+//To get Complete Code Go to my Pateron Page by sponsoring me 
 
-while(i<3){
-char keys = keypads.getKey(); 
-if (keys){
-  array[i]=keys-48;
-  i++;  
-lcd.print(keys);
-}
-}
-value=( (array[0]*100 )+( array[1]*10 )+array[2]);
+
 return value;
 }
