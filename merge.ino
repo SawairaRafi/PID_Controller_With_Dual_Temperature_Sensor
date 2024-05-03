@@ -219,7 +219,7 @@ else if(k!=35){
   myPID.Compute();
  // main logic is missing
 
-//To get Complete Code Go to my Pateron Page by sponsoring me 
+//To get Complete Code Go to my Pateron Page 
 
 //
   lcd.print(t);
@@ -257,7 +257,7 @@ else{
 
 int computeMode(){
  
-//To get Complete Code Go to my Pateron Page by sponsoring me 
+//To get Complete Code Go to my Pateron Page 
 
 
 return value;
